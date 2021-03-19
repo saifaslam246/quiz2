@@ -66,15 +66,15 @@
 
          function check_Name() {
             var pattern = /^[a-zA-Z]*$/;
-            var Name = $("#form_Name").val();
-            if (pattern.test(Name) && Name !== '') {
-               $("#Name_error_message").hide();
-               $("#form_Name").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#Name_error_message").html("Characters should not less than 5");
+            var Name_length = $("#form_Name").val().length;
+            if (Name_length < 5) {
+                $("#Name_error_message").html("Atleast 5 Characters");
                $("#Name_error_message").show();
                $("#form_Name").css("border-bottom","2px solid #F90A0A");
-               error_Name = true;
+               error_password = true;
+            } else {
+                $("#Name_error_message").hide();
+               $("#form_Name").css("border-bottom","2px solid #34F458");
             }
          }
 
